@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Nordvpn-proxy</Name>
+  <Repository>jeroenslot/nordvpn-proxy</Repository>
+  <Registry>https://hub.docker.com/r/jeroenslot/nordvpn-proxy</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support></Support>
+  <Project>https://github.com/Joentje/nordvpn-proxy</Project>
+  <Overview>OpenVPN with NordVPN</Overview>
+  <Category>Network:Proxy</Category>
+  <WebUI/>
+  <TemplateURL>https://github.com/alturismo/unraid_templates/blob/master/my-ovpn_privoxy.xml</TemplateURL>
+  <Icon>https://nordvpn.com/wp-content/uploads/2020/07/favicon-196x196-1.png</Icon>
+  <ExtraParams>--cap-add=NET_ADMIN --device=/dev/net/tun --dns=103.86.96.100 --dns=103.86.99.100</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1578721140</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Needs a discription&#xD;
+&#xD;
+Needs a discription&#xD;</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8118</HostPort>
+        <ContainerPort>8118</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nordvpn/</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>Fill in</Value>
+      <Name>USERNAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Fill in</Value>
+      <Name>PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>192.168.1.0/24</Value>
+      <Name>LOCAL_NETWORK</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="/config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/nordvpn/</Config>
+  <Config Name="LOCAL_NETWORK" Target="LOCAL_NETWORK" Default="" Mode="" Description="Container Variable: LOCAL_NET" Type="Variable" Display="always" Required="true" Mask="false">192.168.1.0/24</Config>
+  <Config Name="USERNAME" Target="USERNAME" Default="" Mode="" Description="Username" Type="Variable" Display="always" Required="true" Mask="false">value</Config>
+  <Config Name="Port" Target="8118" Default="" Mode="tcp" Description="Container Port: 8118" Type="Port" Display="always" Required="true" Mask="false">8118</Config>
+</Container>
