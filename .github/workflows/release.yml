@@ -30,6 +30,8 @@ jobs:
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       - name: tag number
         run : echo $VERSION
+        env:
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
       # - name: Build and push
       #   uses: docker/build-push-action@v2
       #   with:
