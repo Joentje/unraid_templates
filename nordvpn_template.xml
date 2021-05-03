@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support></Support>
   <Project>https://github.com/Joentje/nordvpn-proxy</Project>
-  <Overview>OpenVPN with NordVPN</Overview>
+  <Overview></Overview>
   <Category>Network:Proxy</Category>
   <WebUI/>
   <TemplateURL>https://github.com/alturismo/unraid_templates/blob/master/my-ovpn_privoxy.xml</TemplateURL>
@@ -20,9 +20,7 @@
   <DateInstalled>1578721140</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Description>Needs a discription&#xD;
-&#xD;
-Needs a discription&#xD;</Description>
+  <Description/>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
@@ -36,7 +34,7 @@ Needs a discription&#xD;</Description>
   <Data>
     <Volume>
       <HostDir>/mnt/user/appdata/nordvpn/</HostDir>
-      <ContainerDir>/config</ContainerDir>
+      <ContainerDir>/app/ovpn/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
@@ -51,7 +49,7 @@ Needs a discription&#xD;</Description>
       Type="Variable" 
       Display="always" 
       Required="true" 
-      Mask="false">value</Config>
+      Mask="false"></Config>
   <Config 
       Name="PASSWORD" 
       Target="PASSWORD" 
@@ -60,7 +58,7 @@ Needs a discription&#xD;</Description>
       Type="Variable" 
       Display="always" 
       Required="true" 
-      Mask="true">value</Config>
+      Mask="true"></Config>
   <Config 
       Name="LOCAL_NETWORK" 
       Target="LOCAL_NETWORK" 
@@ -71,54 +69,6 @@ Needs a discription&#xD;</Description>
       Required="true" 
       Mask="false">192.168.1.0/24</Config>
   <Config 
-      Name="CRON" 
-      Target="CRON" 
-      Default="*/15 * * * *" 
-      Description="You can set this variable to change the default check of every 15 minutes. This will be used to check if the LOAD is still OK. This can be changed using the CRON syntax" 
-      Type="Variable" 
-      Display="advanced" 
-      Required="false" 
-      Mask="false">value</Config>
-  <Config 
-      Name="LOAD" 
-      Target="LOAD" 
-      Default="" 
-      Description="If the load is > 75 on a NordVPN server, OpenVPN will be restarted and connects to the recommended server for you! This check will be done every 15 minutes by CRON" 
-      Type="Variable" 
-      Display="advanced" 
-      Required="false" 
-      Mask="false">value</Config>
-  <Config 
-      Name="COUNTRY" 
-      Target="COUNTRY" 
-      Default="" 
-      Mode="" 
-      Description="*Optional*, you can choose your own country by using the two-letter country codes that are supported by NordVPN" 
-      Type="Variable" 
-      Display="advanced" 
-      Required="false" 
-      Mask="false">value</Config>
-  <Config 
-      Name="PROTOCOL" 
-      Target="PROTOCOL" 
-      Default="" 
-      Mode="" 
-      Description="*Optional*, default set to `tcp`, you can change it to `udp`" 
-      Type="Variable" 
-      Display="advanced" 
-      Required="false" 
-      Mask="false">value</Config>
-  <Config 
-      Name="SERVER" 
-      Target="SERVER" 
-      Default="" 
-      Mode="" 
-      Description="*Optional*, if not set, connects to the recommended server for you. If set, connects to the server you specify. Example server name format: `us2484.nordvpn.com`" 
-      Type="Variable" 
-      Display="advanced" 
-      Required="false" 
-      Mask="false">value</Config>
-  <Config 
       Name="Port" 
       Target="8118" 
       Default="8118" 
@@ -128,6 +78,54 @@ Needs a discription&#xD;</Description>
       Display="always" 
       Required="true" 
       Mask="false">8118</Config>
+  <Config 
+      Name="CRON" 
+      Target="CRON" 
+      Default="*/15 * * * *" 
+      Description="You can set this variable to change the default check of every 15 minutes. This will be used to check if the LOAD is still OK. This can be changed using the CRON syntax" 
+      Type="Variable" 
+      Display="advanced" 
+      Required="false" 
+      Mask="false">*/15 * * * *</Config>
+  <Config 
+      Name="LOAD" 
+      Target="LOAD" 
+      Default="75" 
+      Description="If the load is > 75 on a NordVPN server, OpenVPN will be restarted and connects to the recommended server for you! This check will be done every 15 minutes by CRON" 
+      Type="Variable" 
+      Display="advanced" 
+      Required="false" 
+      Mask="false">75</Config>
+  <Config 
+      Name="COUNTRY" 
+      Target="COUNTRY" 
+      Default="Picked by API" 
+      Mode="" 
+      Description="*Optional*, you can choose your own country by using the two-letter country codes that are supported by NordVPN" 
+      Type="Variable" 
+      Display="advanced" 
+      Required="false" 
+      Mask="false"></Config>
+  <Config 
+      Name="PROTOCOL" 
+      Target="PROTOCOL" 
+      Default="" 
+      Mode="" 
+      Description="*Optional*, default set to `tcp`, you can change it to `udp`" 
+      Type="Variable" 
+      Display="advanced" 
+      Required="false" 
+      Mask="false"></Config>
+  <Config 
+      Name="SERVER" 
+      Target="SERVER" 
+      Default="" 
+      Mode="" 
+      Description="*Optional*, if not set, connects to the recommended server for you. If set, connects to the server you specify. Example server name format: `us2484.nordvpn.com`" 
+      Type="Variable" 
+      Display="advanced" 
+      Required="false" 
+      Mask="false"></Config>
   <Config 
       Name="OVPN config" 
       Target="/app/ovpn/config" 
