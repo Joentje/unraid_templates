@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Nordvpn-proxy</Name>
+  <Name>nordvpn-proxy</Name>
   <Repository>jeroenslot/nordvpn-proxy</Repository>
   <Registry>https://hub.docker.com/r/jeroenslot/nordvpn-proxy</Registry>
   <Network>bridge</Network>
