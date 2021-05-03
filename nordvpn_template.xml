@@ -97,31 +97,11 @@
       Required="false" 
       Mask="false">75</Config>
   <Config 
-      Name="COUNTRY" 
-      Target="COUNTRY" 
-      Default="" 
-      Mode="" 
-      Description="*Optional*, you can choose your own country by using the two-letter country codes that are supported by NordVPN" 
-      Type="Variable" 
-      Display="advanced" 
-      Required="false" 
-      Mask="false"></Config>
-  <Config 
       Name="PROTOCOL" 
       Target="PROTOCOL" 
-      Default="" 
+      Default="tcp" 
       Mode="" 
       Description="*Optional*, default set to `tcp`, you can change it to `udp`" 
-      Type="Variable" 
-      Display="advanced" 
-      Required="false" 
-      Mask="false"></Config>
-  <Config 
-      Name="SERVER" 
-      Target="SERVER" 
-      Default="" 
-      Mode="" 
-      Description="*Optional*, if not set, connects to the recommended server for you. If set, connects to the server you specify. Example server name format: `us2484.nordvpn.com`" 
       Type="Variable" 
       Display="advanced" 
       Required="false" 
