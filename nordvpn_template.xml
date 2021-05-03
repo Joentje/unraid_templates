@@ -99,7 +99,7 @@
   <Config 
       Name="COUNTRY" 
       Target="COUNTRY" 
-      Default="Picked by API" 
+      Default="" 
       Mode="" 
       Description="*Optional*, you can choose your own country by using the two-letter country codes that are supported by NordVPN" 
       Type="Variable" 
